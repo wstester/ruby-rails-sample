@@ -1,0 +1,15 @@
+<%= form_for :task, url: tasks_path do |f| %> 
+  <p>
+    <%= f.label :task_text %><br>
+    <%= f.text_field :task_text %>
+  </p>
+ 
+  <p>
+    <%= f.label :is_complete %><br>
+    <%= f.check_box :is_complete %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
