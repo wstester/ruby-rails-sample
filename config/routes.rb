@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'tasks#index'
 
   post 'clearComplete' => 'tasks#clearComplete'
-  post 'toggleComplete/:id' => 'tasks#toggleComplete'
+  post ':id/toggleComplete' => 'tasks#toggleComplete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

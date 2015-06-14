@@ -19,10 +19,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    defaults = {:is_complete=>"0", :task_text=>""}
+    defaults = {:is_complete=>"0", :name=>""}
     params = defaults.merge(task_params)
     @task = Task.new(params)
-    if @task.task_text != ""
+    if @task.name != ""
       @task.is_complete = false
       @task.save
     end
@@ -48,6 +48,6 @@ class TasksController < ApplicationController
 
   private
     def task_params
-      params.require(:task).permit(:task_text, :is_complete)
+      params.require(:task).permit(:name, :is_complete)
     end
 end

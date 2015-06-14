@@ -54,7 +54,7 @@
 
                   <%= form_for :task, url: tasks_path do |f| %>
                     <div class="input-group">
-                      <%= f.text_field :task_text, :class => "form-control", :placeholder=>"What's next on the list?" %>
+                      <%= f.text_field :name, :class => "form-control", :placeholder=>"What's next on the list?" %>
                       <span class="input-group-btn">
                         <%= f.submit :class => "btn", :value => "Add Task" %>
                       </span>
@@ -76,7 +76,7 @@
                     <ul>
                         <% @tasks.each do |task| %>
                         <li>
-                            <form class="form-complete" action="toggleComplete/<%= task.id %>/" method="post">
+                            <form class="form-complete" action="<%= task.id %>/toggleComplete" method="post">
                                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                                 <% if task.is_complete %>
                                 <button class="btn btn-success">
@@ -88,9 +88,9 @@
                                 </button>
                             </form>
                             <% if task.is_complete %>
-                            <span><s> <%=task.task_text %></s></span>
+                            <span><s> <%=task.name %></s></span>
                             <% else %>
-                            <span><%= task.task_text %></span>
+                            <span><%= task.name %></span>
                             <% end %>
                         </li>
                         <% end %>
