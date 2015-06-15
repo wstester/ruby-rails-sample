@@ -48,6 +48,8 @@ The sample project uses a MySQL database. This can easily be swapped with an SQL
 
 # run the db creation command
 warpspeed mysql:db tasks_db tasks_user password123
+
+# you will be prompted for the mysql root database password. It is "vagrant".
 ```
 
 This will create a database named "tasks\_db" along with a user, "tasks\_user", that has access via the password "password123". Feel free to change the values to suit your needs (hint: perhaps choosing a better password would be wise).
@@ -103,10 +105,10 @@ rake secret
 sudo nano .rbenv-vars
 
 # add the following lines
-DB_NAME tasks_db;
-DB_USER tasks_user;
-DB_PASS password123;
-SECRET_KEY YOUR_SECRET_KEY_HERE;
+DB_NAME="tasks_db"
+DB_USER="tasks_user"
+DB_PASS="password123"
+SECRET_KEY=YOUR_SECRET_KEY_HERE
 
 # save and exit
 ```
