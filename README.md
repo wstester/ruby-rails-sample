@@ -84,6 +84,9 @@ rbenv install 2.1.4
 # make sure you are in your project directory
 cd ~/sites/warpspeed-rails.dev
 
+# set the local ruby version to 2.1.4
+rbenv local 2.1.4
+
 # use the bundler to install gemfiles
 bundle install
 ```
